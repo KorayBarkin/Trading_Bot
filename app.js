@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 app.post('/api/v1/tradingview/alert', (req, res) => {
     const alert = req.body;
-
+    console.log(req.body);
     if (alert.type === 'dbs_buy') {
         console.log(`Buying ${alert.ticker} for ${alert.close}`);
         entryPrice = parseInt(alert.close);
